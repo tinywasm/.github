@@ -38,3 +38,17 @@
 | [modules](https://github.com/tinywasm/modules) | Common isomorphic modules for SSR and CSR (WebAssembly) compatible with TinyGo. | 🚧 In Development |
 | [passkeys](https://github.com/tinywasm/passkeys) | Demo/Example of how to add passkeys. | 🎨 Design |
 | [pdf](https://github.com/tinywasm/pdf) | PDF library designed for web rendering with WebAssembly, optimized for TinyGo compatibility. | ✅ Ready |
+| [pwa](https://github.com/tinywasm/pwa) | Experimental / Placeholder. | 🎨 Design |
+| [rbac](https://github.com/tinywasm/rbac) | RBAC implements Role-Based Access Control to manage roles and permissions. | ✅ Ready |
+| [screenshot](https://github.com/tinywasm/screenshot) | Go library to capture desktop to image. | ✅ Ready |
+| [server](https://github.com/tinywasm/server) | Go package that encapsulates the logic for running a development and production server. | 🚧 In Development |
+| [site](https://github.com/tinywasm/site) | Minimal site rendering engine for Go (WASM-friendly). | 🚧 In Development |
+| [sqlite](https://github.com/tinywasm/sqlite) | WebAssembly-first port of modernc.org/sqlite. | 🚧 In Development |
+| [sse](https://github.com/tinywasm/sse) | Client and event server, SSE protocol compatible with TinyGo. | ✅ Ready |
+| [test-permissions](https://github.com/tinywasm/test-permissions) | Test permissions repository. | 🎨 Design |
+| [time](https://github.com/tinywasm/time) | TinyGo-compatible time package for Go. | ✅ Ready |
+| [unixid](https://github.com/tinywasm/unixid) | Go library for generating unique, time-based IDs using Unix timestamps. | ✅ Ready |
+| [user](https://github.com/tinywasm/user) | User management library. | 🚧 In Development |
+| [wasi](https://github.com/tinywasm/wasi) | WASI runtime for tinywasm. | 🚧 In Development |
+| [wasmbrowsertest](https://github.com/tinywasm/wasmbrowsertest) | Run WASM tests inside your browser. | ✅ Ready |
+| [wizard](https://github.com/tinywasm/wizard) | Modular, pluggable wizard orchestrator for TinyGo applications. | 🚧 In Development |
