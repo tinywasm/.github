@@ -1,4 +1,33 @@
-# TinyWasm Packages
+# TinyWasm
+
+The TinyWasm project focuses on providing libraries for building applications with web technologies using Go as the main language, compiling to the frontend via WebAssembly with the **minimum possible binary size** (TinyGo compatibility first).
+
+## Why
+
+**Go's WebAssembly potential is incredible**, but traditional applications face a critical challenge: **massive binary sizes** that make web deployment impractical.
+
+### The Problem
+
+Every Go project needs string manipulation, type conversion, and error handling - but importing standard library packages (`fmt`, `strings`, `strconv`, `errors`) creates significant binary bloat that hurts:
+
+- 🌐 **Web app performance** - Slow loading times and poor user experience
+- 📱 **Edge deployment** - Resource constraints on small devices
+- 🚀 **Distribution efficiency** - Large binaries for simple operations
+
+### The Solution
+
+TinyWasm provides **lightweight, manual implementations** that deliver:
+
+- 🏆 **Drastic size reduction** - Optimized for WebAssembly
+- ✅ **Full TinyGo compatibility** - No compilation issues or warnings
+- 🎯 **Predictable performance** - No hidden allocations or overhead
+- 🔧 **Familiar API** - Drop-in replacement for standard library functions
+
+## Core Framework
+
+The main framework for development is **[tinywasm/app](https://github.com/tinywasm/app)**. It serves as the primary tool for building, watching, and deploying your TinyWasm applications.
+
+## Packages
 
 | Package | Description | Status |
 | :--- | :--- | :--- |
