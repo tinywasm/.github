@@ -1,83 +1,64 @@
 # TinyWasm
 
-The TinyWasm project focuses on providing libraries for building applications with web technologies using Go as the main language, compiling to the frontend via WebAssembly with the **minimum possible binary size** (TinyGo compatibility first).
+### Build full-stack web apps in **pure Go** — tiny WebAssembly bundles, zero JS toolchain, built for the age of AI assistants.
 
-## Why
+TinyWasm is an ecosystem of Go libraries (and a batteries-included dev environment) for building web apps where **Go is the only language** — backend, frontend, and shared logic — compiled to the frontend via WebAssembly with the **smallest possible binary** (TinyGo-first).
 
-**Go's WebAssembly potential is incredible**, but traditional applications face a critical challenge: **massive binary sizes** that make web deployment impractical.
+👉 **Start here:** [**tinywasm/app**](https://github.com/tinywasm/app) — the TUI dev environment with live reload, MCP for AI assistants, and one-command setup (installation and quick start live there).
 
-### The Problem
+---
 
-Every Go project needs string manipulation, type conversion, and error handling - but importing standard library packages (`fmt`, `strings`, `strconv`, `errors`) creates significant binary bloat that hurts:
+## Why you might love it
 
-- 🌐 **Web app performance** - Slow loading times and poor user experience
-- 📱 **Edge deployment** - Resource constraints on small devices
-- 🚀 **Distribution efficiency** - Large binaries for simple operations
+- 🟦 **One language everywhere** — share types, validation, and logic across client and server. No TypeScript, no npm, no bundlers.
+- 🪶 **Tiny WASM** — ~200 KB–2 MB depending on mode; TinyGo-first, no hidden allocations.
+- 🤖 **Built for AI** — a Model Context Protocol server lets assistants see your UI, read logs, and control compilation.
+- 🧰 **Typed construction harness** — APIs designed so the code is easy to read and hard to get wrong: the compiler rejects mistakes, so even an assistant that doesn't know a library builds correctly.
+- 🔧 **Zero config** — your project structure *is* the configuration.
 
-### The Solution
+## The size problem it solves
 
-TinyWasm provides **lightweight, manual implementations** that deliver:
+Go's WebAssembly potential is huge, but standard-library packages (`fmt`, `strings`, `strconv`, `errors`) bloat binaries — hurting web performance, edge deployment, and distribution. TinyWasm provides **lightweight, TinyGo-compatible implementations** with a familiar API: drastic size reduction, no compilation warnings, predictable performance.
 
-- 🏆 **Drastic size reduction** - Optimized for WebAssembly
-- ✅ **Full TinyGo compatibility** - No compilation issues or warnings
-- 🎯 **Predictable performance** - No hidden allocations or overhead
-- 🔧 **Familiar API** - Drop-in replacement for standard library functions
-
-## Core Framework
-
-The main framework for development is **[tinywasm/app](https://github.com/tinywasm/app)**. It serves as the primary tool for building, watching, and deploying your TinyWasm applications.
+---
 
 ## Packages
 
-| Package | Description | Status |
+The libraries you'll use to build apps. The **Activity** badge shows each repo's last commit, pulled live from GitHub — click it to open that library's history.
+
+| Package | Description | Activity |
 | :--- | :--- | :--- |
-| [app](https://github.com/tinywasm/app) | Full stack TUI development environment with live reload, test, deploy, CI/CD for web applications (PWA). | 🚧 In Development |
-| [assetmin](https://github.com/tinywasm/assetmin) | A lightweight and efficient web asset packager and minifier for Go applications. | ✅ Ready |
-| [binary](https://github.com/tinywasm/binary) | High-performance binary serialization library for Go, specifically designed for TinyGo compatibility. | ✅ Ready |
-| [broker](https://github.com/tinywasm/broker) | A lightweight broker that mediates HTTP requests and responses. | 🚧 In Development |
-| [bus](https://github.com/tinywasm/bus) | Minimal pub/sub event bus for the tinywasm ecosystem. | ✅ Ready |
-| [cdproto](https://github.com/tinywasm/cdproto) | Generated commands, types, and events for the Chrome DevTools Protocol domains. | ✅ Ready |
-| [chromedp](https://github.com/tinywasm/chromedp) | A faster, simpler way to drive browsers supporting the Chrome DevTools Protocol. | ✅ Ready |
-| [client](https://github.com/tinywasm/client) | Tinywasm compilation toolbox designed to streamline the compilation of Go packages to WebAssembly. | 🚧 In Development |
-| [components](https://github.com/tinywasm/components) | HTML components for the go web framework tinywasm. | 🚧 In Development |
-| [context](https://github.com/tinywasm/context) | Minimalist context library for TinyGo. | ✅ Ready |
-| [crudp](https://github.com/tinywasm/crudp) | A simple binary CRUD protocol for Go structs. | ✅ Ready |
-| [crypto](https://github.com/tinywasm/crypto) | CryptoAutoLib port for TinyGo. | ✅ Ready |
-| [deploy](https://github.com/tinywasm/deploy) | Automated deployment service for Go applications. | 🚧 In Development |
-| [depfind](https://github.com/tinywasm/depfind) | A Go tool to find reverse dependencies - lists packages that import specified target packages. | ✅ Ready |
-| [devbrowser](https://github.com/tinywasm/devbrowser) | Lightweight Go library for launching and controlling web browsers programmatically. | ✅ Ready |
-| [devflow](https://github.com/tinywasm/devflow) | Complete Go development automation: project init, testing, versioning, updates, and backups. | ✅ Ready |
-| [devtui](https://github.com/tinywasm/devtui) | Reusable terminal user interface abstraction for Go development tools. | 🚧 In Development |
-| [devwatch](https://github.com/tinywasm/devwatch) | fsnotify implementation that watches file system changes in a project directory. | ✅ Ready |
-| [dom](https://github.com/tinywasm/dom) | Ultra-minimal DOM & event toolkit for Go (TinyGo WASM-optimized). | ✅ Ready |
-| [fetch](https://github.com/tinywasm/fetch) | A lightweight Go library that unifies HTTP requests across environments. | ✅ Ready |
-| [fmt](https://github.com/tinywasm/fmt) | Lightweight Go library that provides comprehensive string manipulation and formatting. | ✅ Ready |
-| [form](https://github.com/tinywasm/form) | Form generation using DOM and structs. | 🚧 In Development |
-| [gobuild](https://github.com/tinywasm/gobuild) | Minimal build handler for compiling Go or WebAssembly targets via CLI. | ✅ Ready |
-| [goflare](https://github.com/tinywasm/goflare) | Lightweight handler for building and deploying Go-based WebAssembly and JavaScript modules to Cloudflare. | 🚧 In Development |
-| [gorun](https://github.com/tinywasm/gorun) | Go package to run, monitor, and stop external programs. | ✅ Ready |
-| [imagemin](https://github.com/tinywasm/imagemin) | Image size reduction tool for web projects. | ✅ Ready |
-| [indexdb](https://github.com/tinywasm/indexdb) | IndexDB implementation with WebAssembly compiled with Go. | 🚧 In Development |
-| [json](https://github.com/tinywasm/json) | A lightweight JSON wrapper for Go that optimizes WebAssembly binary size. | ✅ Ready |
-| [jsvalue](https://github.com/tinywasm/jsvalue) | Efficient conversions between JavaScript and Go for a WebAssembly environment. | ✅ Ready |
-| [keyring](https://github.com/tinywasm/keyring) | A secure credentials manager using DPAPI. | ✅ Ready |
-| [kvdb](https://github.com/tinywasm/kvdb) | TinyGo–compatible key–value store with a minimal API. | ✅ Ready |
-| [mcp](https://github.com/tinywasm/mcp) | Go implementation of the Model Context Protocol (MCP). | ✅ Ready |
-| [mcpserve](https://github.com/tinywasm/mcpserve) | MCP server for TinyWasm ecosystem. | 🚧 In Development |
-| [modules](https://github.com/tinywasm/modules) | Common isomorphic modules for SSR and CSR (WebAssembly) compatible with TinyGo. | 🚧 In Development |
-| [passkeys](https://github.com/tinywasm/passkeys) | Demo/Example of how to add passkeys. | 🎨 Design |
-| [pdf](https://github.com/tinywasm/pdf) | PDF library designed for web rendering with WebAssembly, optimized for TinyGo compatibility. | ✅ Ready |
-| [pwa](https://github.com/tinywasm/pwa) | Experimental / Placeholder. | 🎨 Design |
-| [rbac](https://github.com/tinywasm/rbac) | RBAC implements Role-Based Access Control to manage roles and permissions. | ✅ Ready |
-| [screenshot](https://github.com/tinywasm/screenshot) | Go library to capture desktop to image. | ✅ Ready |
-| [server](https://github.com/tinywasm/server) | Go package that encapsulates the logic for running a development and production server. | 🚧 In Development |
-| [site](https://github.com/tinywasm/site) | Minimal site rendering engine for Go (WASM-friendly). | 🚧 In Development |
-| [sqlite](https://github.com/tinywasm/sqlite) | WebAssembly-first port of modernc.org/sqlite. | 🚧 In Development |
-| [sse](https://github.com/tinywasm/sse) | Client and event server, SSE protocol compatible with TinyGo. | ✅ Ready |
-| [test-permissions](https://github.com/tinywasm/test-permissions) | Test permissions repository. | 🎨 Design |
-| [time](https://github.com/tinywasm/time) | TinyGo-compatible time package for Go. | ✅ Ready |
-| [unixid](https://github.com/tinywasm/unixid) | Go library for generating unique, time-based IDs using Unix timestamps. | ✅ Ready |
-| [user](https://github.com/tinywasm/user) | User management library. | 🚧 In Development |
-| [wasi](https://github.com/tinywasm/wasi) | WASI runtime for tinywasm. | 🚧 In Development |
-| [wasmbrowsertest](https://github.com/tinywasm/wasmbrowsertest) | Run WASM tests inside your browser. | ✅ Ready |
-| [wizard](https://github.com/tinywasm/wizard) | Modular, pluggable wizard orchestrator for TinyGo applications. | 🚧 In Development |
+| [app](https://github.com/tinywasm/app) | Full stack TUI development environment with live reload, test, deploy, CI/CD for web applications (PWA). | [![last commit](https://img.shields.io/github/last-commit/tinywasm/app?label=&color=2ea44f)](https://github.com/tinywasm/app/commits) |
+| [binary](https://github.com/tinywasm/binary) | High-performance binary serialization library for Go, specifically designed for TinyGo compatibility. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/binary?label=&color=2ea44f)](https://github.com/tinywasm/binary/commits) |
+| [components](https://github.com/tinywasm/components) | HTML components for the go web framework tinywasm. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/components?label=&color=2ea44f)](https://github.com/tinywasm/components/commits) |
+| [context](https://github.com/tinywasm/context) | Minimalist context library for TinyGo. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/context?label=&color=2ea44f)](https://github.com/tinywasm/context/commits) |
+| [crypto](https://github.com/tinywasm/crypto) | CryptoAutoLib port for TinyGo. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/crypto?label=&color=2ea44f)](https://github.com/tinywasm/crypto/commits) |
+| [deploy](https://github.com/tinywasm/deploy) | Automated deployment service for Go applications. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/deploy?label=&color=2ea44f)](https://github.com/tinywasm/deploy/commits) |
+| [devflow](https://github.com/tinywasm/devflow) | Complete Go development automation: project init, testing, versioning, updates, and backups. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/devflow?label=&color=2ea44f)](https://github.com/tinywasm/devflow/commits) |
+| [dom](https://github.com/tinywasm/dom) | Ultra-minimal DOM & event toolkit for Go (TinyGo WASM-optimized). | [![last commit](https://img.shields.io/github/last-commit/tinywasm/dom?label=&color=2ea44f)](https://github.com/tinywasm/dom/commits) |
+| [fetch](https://github.com/tinywasm/fetch) | A lightweight Go library that unifies HTTP requests across environments. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/fetch?label=&color=2ea44f)](https://github.com/tinywasm/fetch/commits) |
+| [fmt](https://github.com/tinywasm/fmt) | Lightweight Go library that provides comprehensive string manipulation and formatting. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/fmt?label=&color=2ea44f)](https://github.com/tinywasm/fmt/commits) |
+| [form](https://github.com/tinywasm/form) | Form generation using DOM and structs. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/form?label=&color=2ea44f)](https://github.com/tinywasm/form/commits) |
+| [goflare](https://github.com/tinywasm/goflare) | Lightweight handler for building and deploying Go-based WebAssembly and JavaScript modules to Cloudflare. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/goflare?label=&color=2ea44f)](https://github.com/tinywasm/goflare/commits) |
+| [imagemin](https://github.com/tinywasm/imagemin) | Image size reduction tool for web projects. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/imagemin?label=&color=2ea44f)](https://github.com/tinywasm/imagemin/commits) |
+| [indexdb](https://github.com/tinywasm/indexdb) | IndexDB implementation with WebAssembly compiled with Go. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/indexdb?label=&color=2ea44f)](https://github.com/tinywasm/indexdb/commits) |
+| [json](https://github.com/tinywasm/json) | A lightweight JSON wrapper for Go that optimizes WebAssembly binary size. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/json?label=&color=2ea44f)](https://github.com/tinywasm/json/commits) |
+| [jsvalue](https://github.com/tinywasm/jsvalue) | Efficient conversions between JavaScript and Go for a WebAssembly environment. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/jsvalue?label=&color=2ea44f)](https://github.com/tinywasm/jsvalue/commits) |
+| [kvdb](https://github.com/tinywasm/kvdb) | TinyGo–compatible key–value store with a minimal API. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/kvdb?label=&color=2ea44f)](https://github.com/tinywasm/kvdb/commits) |
+| [mcp](https://github.com/tinywasm/mcp) | Go implementation of the Model Context Protocol (MCP). | [![last commit](https://img.shields.io/github/last-commit/tinywasm/mcp?label=&color=2ea44f)](https://github.com/tinywasm/mcp/commits) |
+| [pdf](https://github.com/tinywasm/pdf) | PDF library designed for web rendering with WebAssembly, optimized for TinyGo compatibility. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/pdf?label=&color=2ea44f)](https://github.com/tinywasm/pdf/commits) |
+| [postgres](https://github.com/tinywasm/postgres) | PostgreSQL adapter implementing the `tinywasm/orm` Adapter interface. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/postgres?label=&color=2ea44f)](https://github.com/tinywasm/postgres/commits) |
+| [sqlite](https://github.com/tinywasm/sqlite) | WebAssembly-first port of modernc.org/sqlite. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/sqlite?label=&color=2ea44f)](https://github.com/tinywasm/sqlite/commits) |
+| [sse](https://github.com/tinywasm/sse) | Client and event server, SSE protocol compatible with TinyGo. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/sse?label=&color=2ea44f)](https://github.com/tinywasm/sse/commits) |
+| [time](https://github.com/tinywasm/time) | TinyGo-compatible time package for Go. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/time?label=&color=2ea44f)](https://github.com/tinywasm/time/commits) |
+| [unixid](https://github.com/tinywasm/unixid) | Go library for generating unique, time-based IDs using Unix timestamps. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/unixid?label=&color=2ea44f)](https://github.com/tinywasm/unixid/commits) |
+| [user](https://github.com/tinywasm/user) | User management library. | [![last commit](https://img.shields.io/github/last-commit/tinywasm/user?label=&color=2ea44f)](https://github.com/tinywasm/user/commits) |
+
+---
+
+## Get involved
+
+We're building a **Go-first web ecosystem** and welcome contributions — Go ports of browser APIs, performance tools, starter templates, docs, and bug reports.
+
+- 💬 [Discussions](https://github.com/tinywasm/app/discussions) · 🐞 [Issues](https://github.com/tinywasm/app/issues)
+- ⭐ Star the libraries you find useful — it helps others discover the ecosystem.
